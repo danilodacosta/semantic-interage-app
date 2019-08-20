@@ -46,9 +46,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./src/assets/css/bootstrap.min.css",
+              "./src/assets/css/font-awesome/css/font-awesome.min.css",
+              "./src/assets/css/themify-icons/css/themify-icons.css",
+              "./src/assets/css/main.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./src/assets/js/jquery.min.js",
+              "./src/assets/js/popper.min.js",
+              "./src/assets/js/bootstrap.min.js",
+              "./src/assets/js/metisMenu.min.js",
+              "./src/assets/js/jquery.slimscroll.min.js",
+              "./src/assets/js/app.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
