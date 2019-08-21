@@ -1,0 +1,37 @@
+@import "src/styles.scss";
+
+// PROPRIEDADES DO PAINEL
+div.ibox .ibox-head {
+  height: 70px;
+  border-bottom: 1px solid $azul-primario;
+
+  div.ibox-title {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: $azul-primario;
+  }
+
+  //BOTÕES DO PAINEL
+  div.ibox-tools {
+    a {
+      color: $cinza-primario;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 0 12px;
+
+      &:hover {
+        background: $azul-primario;
+        color: #fff;
+        padding: 12px;
+      }
+
+      .fa {
+        margin-right: 3px;
+      }
+    }
+  }
+}
