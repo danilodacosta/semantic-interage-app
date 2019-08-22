@@ -11,7 +11,7 @@
       </span>
 
       <a *ngIf="!isTheLastItem(item)" [routerLink]="item.link">
-        <i class="fa fa-shopping-cart"></i>
+        <i class="fa" [ngClass]="item.icon"></i>
         {{item.text}}
       </a>
     </li>

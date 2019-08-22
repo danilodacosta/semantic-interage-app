@@ -1,0 +1,25 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "TESTE",
+      "unidade": 50,
+      "contaContabil": "1235486",
+      "ultimoPrecoCompra": "250,00"
+    },
+    {
+      "id": 2,
+      "descricao": null,
+      "unidade": null,
+      "contaContabil": null,
+      "ultimoPrecoCompra": null
+    },
+    {
+      "id": 3,
+      "descricao": "asdasd",
+      "unidade": 11111,
+      "contaContabil": "asdasdasd",
+      "ultimoPrecoCompra": "11111,00"
+    }
+  ]
+}

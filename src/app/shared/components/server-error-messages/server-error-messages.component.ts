@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-server-error-messages',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-error-messages.component.scss']
 })
 export class ServerErrorMessagesComponent implements OnInit {
+
+  // tslint:disable-next-line: no-input-rename
+  @Input('server-error-messages') serverErrorMessages: string[] = null;
 
   constructor() { }
 

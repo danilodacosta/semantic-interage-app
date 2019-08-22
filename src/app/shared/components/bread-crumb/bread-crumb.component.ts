@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 interface BreadCrumbItem {
   text: string;
   link?: string;
+  icon?: string;
 }
 
 @Component({
