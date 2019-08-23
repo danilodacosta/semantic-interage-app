@@ -6,6 +6,7 @@ export class Produto extends BaseResourceModel {
     public descricao?: string,
     public unidade?: number,
     public contaContabil?: number,
+    public almoxarifado?: number,
     public ultimoPrecoCompra?: number
   ) {
     super();

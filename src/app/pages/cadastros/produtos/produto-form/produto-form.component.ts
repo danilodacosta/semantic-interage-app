@@ -1,3 +1,4 @@
+import { Mascaras } from './../../../../shared/directives/mascaras';
 import { Component, Injector } from '@angular/core';
 import { Validators } from '@angular/forms';
 
@@ -5,6 +6,7 @@ import { BaseResourceFormComponent } from 'src/app/shared/components/base-resour
 
 import { Produto } from './../shared/produto.model';
 import { ProdutoService } from '../shared/produto.service';
+
 
 @Component({
   selector: 'app-produto-form',
@@ -22,6 +24,7 @@ export class ProdutoFormComponent extends BaseResourceFormComponent<Produto> {
     radix: ','
   };
 
+
   constructor(protected produtoService: ProdutoService, protected injector: Injector) {
     super(injector, new Produto(), produtoService, Produto.fromJson);
   }
@@ -29,9 +32,10 @@ export class ProdutoFormComponent extends BaseResourceFormComponent<Produto> {
   protected buildResourceForm(): void {
      this.resourceForm = this.formBuilder.group({
       id : [null],
-      descricao: [null, [Validators.required, Validators.minLength(5)]],
-      unidade: [null,  [Validators.required]],
-      contaContabil: [null ,  [Validators.required]],
+      descricao: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
+      unidade: [null,  [Validators.required , Validators.pattern(Mascaras.numberPattern)]],
+      contaContabil: [null ,  [ Validators.pattern(Mascaras.numberPattern), Validators.required , Validators.maxLength(15)]],
+      almoxarifado: [null ,  [ Validators.pattern(Mascaras.numberPattern), Validators.required , Validators.maxLength(2)]],
       ultimoPrecoCompra: [null , [Validators.required]]
     });
   }

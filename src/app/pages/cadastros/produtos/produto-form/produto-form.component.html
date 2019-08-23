@@ -6,56 +6,60 @@
   <form [formGroup]="resourceForm" (submit)="submitForm()">
 
     <div class="row">
-
       <!-- descricao -->
-      <div class="col-md-6 form-group">
-        <label for="descricao">Descrição</label>
-        <input type="text" placeholder="Descrição" class="form-control" id="descricao" formControlName="descricao">
-        <app-form-field-error [form-control]="resourceForm.get('descricao')"></app-form-field-error>
+      <div class="col-md-6">
+        <app-form-container for="descricao" label="Descrição" [form-control]="resourceForm.get('descricao')">
+          <input type="text" placeholder="Descrição" class="form-control" id="descricao" formControlName="descricao">
+        </app-form-container>
       </div>
 
       <!-- unidade -->
-      <div class="col-md-6 form-group">
-        <label for="unidade">Unidade</label>
-        <input type="number" placeholder="Unidade" class="form-control" id="unidade" formControlName="unidade">
-        <app-form-field-error [form-control]="resourceForm.get('unidade')"></app-form-field-error>
+      <div class="col-md-6">
+        <app-form-container for="unidade" label="Unidade" [form-control]="resourceForm.get('unidade')">
+          <input placeholder="Unidade" class="form-control" id="unidade" formControlName="unidade">
+        </app-form-container>
       </div>
-
     </div>
 
     <div class="row">
 
-      <div class="col-md-6 form-group">
-        <label for="contaContabil">Conta Contábil</label>
-        <input type="text" placeholder="Conta Contábil" class="form-control" id="contaContabil"
-          formControlName="contaContabil">
-        <app-form-field-error [form-control]="resourceForm.get('contaContabil')"></app-form-field-error>
+      <div class="col-md-4">
+        <app-form-container label="Conta Contábil" for="contaContabil"
+          [form-control]="resourceForm.get('contaContabil')">
+          <input type="text" placeholder="Conta Contábil" class="form-control" id="contaContabil"
+            formControlName="contaContabil">
+        </app-form-container>
       </div>
 
+      <div class="col-md-4">
+        <app-form-container label="Almoxarifado" for="almoxarifado" [form-control]="resourceForm.get('almoxarifado')">
+          <input type="text" placeholder="Almoxarifado" class="form-control" id="almoxarifado"
+            formControlName="almoxarifado">
+        </app-form-container>
+      </div>
+
+
       <!-- ultimo valor de compra -->
-      <div class="form-group col-md-6">
-        <label for="ultimoPrecoCompra">Último preço de compra</label>
-        <div class="input-group">
-          <div class="input-group-addon bg-white">
-            <div class="input-group-text">R$</div>
+      <div class="col-md-4">
+        <app-form-container for="ultimoPrecoCompra" label="Último preço de compra"
+          [form-control]="resourceForm.get('ultimoPrecoCompra')">
+          <div class="input-group">
+            <div class="input-group-addon">R$</div>
+            <input placeholder="0,00" [imask]="imaskConfig" type="text" class="form-control text-right"
+              id="ultimoPrecoCompra" formControlName="ultimoPrecoCompra">
           </div>
-          <input placeholder="0,00" [imask]="imaskConfig" type="text" class="form-control text-right"
-            id="ultimoPrecoCompra" formControlName="ultimoPrecoCompra">
-        </div>
-        <app-form-field-error [form-control]="resourceForm.get('ultimoPrecoCompra')"></app-form-field-error>
+        </app-form-container>
       </div>
     </div>
 
     <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
 
-    <p-button [disabled]="submittingForm || resourceForm.invalid" class="float-right" icon="pi pi-check" label="Salvar"></p-button>
-
-    <button [disabled]="submittingForm || resourceForm.invalid" type="submit"
-    class="btn btn-primary mt-3"><i class="fa fa-save"></i>Salvar Produto</button>
-
-
-
-
+    <div class="row">
+      <div class="form-group col-md-12">
+        <button class="float-right" pButton [disabled]="submittingForm || resourceForm.invalid" type="submit"
+          label="Salvar" icon="pi pi-check"></button>
+      </div>
+    </div>
   </form>
 
 </app-panel-container>

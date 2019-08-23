@@ -1,24 +1,28 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Mascaras } from '../../directives/mascaras';
 
 @Component({
-  selector: 'app-form-field-error',
-  template: `
-    <p class="text-danger">
-      {{errorMessage}}
-    </p>
-  `,
-  styleUrls: ['./form-field-error.component.scss']
+  selector: 'app-form-container',
+  templateUrl: './form-container.component.html',
+  styleUrls: ['./form-container.component.scss']
 })
-export class FormFieldErrorComponent implements OnInit {
+export class FormContainerComponent implements OnInit {
 
   // tslint:disable-next-line: no-input-rename
   @Input('form-control') formControl: FormControl;
+
+  @Input() showTip: boolean = true;
+
+  @Input() label: string;
+
+  @Input() for: string;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
   public get errorMessage(): string | null {
     if (this.mustShowErrorMessage()) {
@@ -34,6 +38,7 @@ export class FormFieldErrorComponent implements OnInit {
   }
 
   private getErrorMessage(): string | null {
+
     if (this.formControl.errors.required) {
       return 'Campo Obrigatório';
 
@@ -47,8 +52,24 @@ export class FormFieldErrorComponent implements OnInit {
     } else if (this.formControl.errors.maxlength) {
       const requiredLength = this.formControl.errors.maxlength.requiredLength;
       return `O campo deve ter no máximo ${requiredLength} caracteres`;
-    }
 
+    } else if (this.formControl.errors.pattern) {
+
+      const numberFormat = Mascaras.numberPattern.toString();
+
+      if (this.formControl.errors.pattern.requiredPattern === numberFormat) {
+          return `Valor inválido`;
+        }
+      }
   }
+
+  hasSuccess(): boolean {
+    return this.formControl.valid && (this.formControl.dirty || this.formControl.touched);
+  }
+
+  hasError(): boolean {
+    return this.formControl.invalid && (this.formControl.dirty || this.formControl.touched);
+  }
+
 
 }

@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 
+
 @NgModule({
   declarations: [HeaderComponent, NavbarComponent, FooterComponent],
   imports: [

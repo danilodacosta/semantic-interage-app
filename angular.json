@@ -62,7 +62,8 @@
               "./src/assets/js/bootstrap.min.js",
               "./src/assets/js/metisMenu.min.js",
               "./src/assets/js/jquery.slimscroll.min.js",
-              "./src/assets/js/app.min.js"
+              "./src/assets/js/app.min.js",
+              "./src/assets/js/backspace-disabled-navigation.js"
             ],
             "es5BrowserSupport": true
           },

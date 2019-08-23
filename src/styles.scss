@@ -1,3 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 $azul-primario: #406d94;
 $cinza-primario: #808080;
+
+label {
+  font-weight: 700;
+  color: #5c666a;
+  margin-bottom: 4px;
+}
+
+input:focus {
+  //border-color: #2a85cc;
+  border-color: $azul-primario;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ button {
+    background: none;
+    color: $azul-primario;
+    transition: all 0.2s;
+    font-size: 1rem;
+    border: none;
+
+    &:hover {
+      background: $azul-primario;
+      border-radius: 3px;
+      color: #fff;
+    }
+
+  }
