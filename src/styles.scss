@@ -17,17 +17,17 @@ button:hover {
   cursor: pointer;
 }
 
- button {
-    background: none;
-    color: $azul-primario;
-    transition: all 0.2s;
-    font-size: 1rem;
-    border: none;
+.btn-acoes {
+  background: none;
+  color: $azul-primario;
+  transition: all 0.2s;
+  font-size: 1rem;
+  border: none;
 
-    &:hover {
-      background: $azul-primario;
-      border-radius: 3px;
-      color: #fff;
-    }
-
+  &:hover {
+    background: $azul-primario;
+    border-radius: 3px;
+    color: #fff;
   }
+
+}
