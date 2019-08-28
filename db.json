@@ -15,6 +15,14 @@
       "contaContabil": "154222141",
       "almoxarifado": "22",
       "ultimoPrecoCompra": "25,00"
+    },
+    {
+      "id": 6,
+      "descricao": "sdasasd",
+      "unidade": "150",
+      "contaContabil": "125412254141141",
+      "almoxarifado": "12",
+      "ultimoPrecoCompra": "1500,00"
     }
   ],
   "solicitacao-armazem": [

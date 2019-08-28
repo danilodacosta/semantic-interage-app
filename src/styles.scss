@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);
+
 $azul-primario: #406d94;
 $cinza-primario: #808080;
+
+@mixin font($tamanho) {
+  font-size: $tamanho;
+}
 
 label {
   font-weight: 700;
@@ -29,5 +37,21 @@ button:hover {
     border-radius: 3px;
     color: #fff;
   }
+}
 
+div.ui-panel-titlebar {
+  span.ui-panel-title {
+    color: $azul-primario;
+    text-transform: uppercase;
+    @include font(12px);
+  }
+}
+
+table,
+label {
+  @include font(13px);
+}
+
+.page-title {
+  @include font(17px);
 }

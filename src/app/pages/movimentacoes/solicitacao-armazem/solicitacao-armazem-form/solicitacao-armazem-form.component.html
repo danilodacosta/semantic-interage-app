@@ -1,129 +1,126 @@
-<app-bread-crumb page-title="Solicitação Armazém"
+<app-bread-crumb
+  page-title="Solicitação Armazém"
   [items]="[{text: 'Solicitações', link: '/solicitacao-armazem'} , {text: pageTitle}]">
 </app-bread-crumb>
 
-<app-panel-container button-link="/solicitacao-armazem" [panel-title]="pageTitle" button-text="Voltar"
-  button-icon="fa-arrow-left">
-
-
+<app-panel-container
+    button-link="/solicitacao-armazem"
+    [panel-title]="pageTitle"
+    button-text="Voltar"
+    button-icon="fa-arrow-left">
 
   <form [formGroup]="resourceForm" (submit)="submitForm()">
-    <div class="card">
-      <div class="card-header">
-        Dados da Solicitação
-      </div>
-      <div class="card-body">
-        <div class="row">
-          <!-- numero -->
-          <div class="col-md-4">
-            <app-form-container for="numero" label="Número" [form-control]="resourceForm.get('numero')">
-              <input type="text" placeholder="Número" class="form-control" id="numero" formControlName="numero">
-            </app-form-container>
-          </div>
 
-          <!-- solicitante -->
-          <div class="col-md-4">
-            <app-form-container for="solicitante" label="Solicitante" [form-control]="resourceForm.get('solicitante')">
-              <input placeholder="Solicitante" class="form-control" id="solicitante" formControlName="solicitante">
-            </app-form-container>
-          </div>
+    <p-panel header="Dados da Solicitação" [toggleable]="true">
 
-          <!-- data de emissão -->
-          <div class="col-md-4">
-            <app-form-container for="dataEmissao" label="Data de Emissão"
-              [form-control]="resourceForm.get('dataEmissao')">
+      <div class="row">
 
-              <p-calendar id="date" formControlName="dataEmissao" inputStyleClass="form-control" dataType="string"
-                dateFormat="dd/mm/yy" [locale]="ptBR" [showButtonBar]="true">
-              </p-calendar>
+        <!-- numero -->
+        <div class="col-md-4">
+          <app-form-container for="numero" label="Número" [form-control]="resourceForm.get('numero')">
+            <input type="text" placeholder="Número" class="form-control" id="numero" formControlName="numero">
+          </app-form-container>
+        </div>
 
-            </app-form-container>
-          </div>
+        <!-- solicitante -->
+        <div class="col-md-4">
+          <app-form-container for="solicitante" label="Solicitante" [form-control]="resourceForm.get('solicitante')">
+            <input placeholder="Solicitante" class="form-control" id="solicitante" formControlName="solicitante">
+          </app-form-container>
+        </div>
+
+        <!-- data de emissão -->
+        <div class="col-md-4">
+          <app-form-container for="dataEmissao" label="Data de Emissão"
+            [form-control]="resourceForm.get('dataEmissao')">
+            <p-calendar id="date" formControlName="dataEmissao" inputStyleClass="form-control" dataType="string"
+              dateFormat="dd/mm/yy" [locale]="ptBR" [showButtonBar]="true">
+            </p-calendar>
+          </app-form-container>
         </div>
 
       </div>
-    </div>
 
+    </p-panel>
 
-<br>
+    <br>
 
-    <div class="card">
+    <p-panel header="Lançamentos de Produtos" [toggleable]="true">
 
-      <div class="card-header">
-        Lançamentos de Produtos
-      </div>
+      <button class="btn btn-default btn-sm float-right mb-2"><i class="fa fa-plus pull-leftx"></i> Produto</button>
 
-      <div class="card-body">
+      <table class="table table-striped table-bordered table-hover table-responsive">
 
-          <button class="btn btn-default btn-sm float-right mb-2"><i class="fa fa-plus pull-leftx"></i> Produto</button>
+        <thead class="thead-default">
+          <tr>
+            <th>#</th>
+            <th>Produto</th>
+            <th>Unidade</th>
+            <th>Quantidade</th>
+            <th class="text-center">Ações</th>
+          </tr>
+        </thead>
 
-          <table class="table table-striped table-bordered table-hover table-responsive">
-              <thead class ="thead-default">
-                  <tr>
-                      <th>#</th>
-                      <th>Produto</th>
-                      <th>Unidade</th>
-                      <th>Quantidade</th>
-                      <th class="text-center">Ações</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>1</td>
-                      <td>Macarrão Fortaleza</td>
-                      <td>PC</td>
-                      <td>4</td>
-                      <td class="text-center">
-                          <button title="Editar" class="m-r-5 btn-acoes">
-                              <i class="fa fa-pencil font-14"></i>
-                          </button>
-                          <button  title="Excluir" class="m-r-5 btn-acoes">
-                              <i class="fa fa-trash font-14"></i>
-                          </button>
-                        </td>
-                  </tr>
-                  <tr>
-                      <td>2</td>
-                      <td>Leite em pó</td>
-                      <td>PC</td>
-                      <td>20</td>
-                      <td class="text-center">
-                          <button title="Editar" class="m-r-5 btn-acoes">
-                              <i class="fa fa-pencil font-14"></i>
-                          </button>
-                          <button  title="Excluir" class="m-r-5 btn-acoes">
-                              <i class="fa fa-trash font-14"></i>
-                          </button>
-                        </td>
-                  </tr>
-                  <tr>
-                      <td>3</td>
-                      <td>Arroz Tio João</td>
-                      <td>KG</td>
-                      <td>3</td>
-                      <td class="text-center">
-                          <button title="Editar" class="m-r-5 btn-acoes">
-                              <i class="fa fa-pencil font-14"></i>
-                          </button>
-                          <button  title="Excluir" class="m-r-5 btn-acoes">
-                              <i class="fa fa-trash font-14"></i>
-                          </button>
-                        </td>
-                  </tr>
-              </tbody>
-          </table>
+        <tbody>
 
-      </div>
-    </div>
+          <tr>
+            <td>1</td>
+            <td>Macarrão Fortaleza</td>
+            <td>PC</td>
+            <td>4</td>
+            <td class="text-center">
+              <button title="Editar" class="m-r-5 btn-acoes">
+                <i class="fa fa-pencil font-14"></i>
+              </button>
+              <button title="Excluir" class="m-r-5 btn-acoes">
+                <i class="fa fa-trash font-14"></i>
+              </button>
+            </td>
+          </tr>
 
+          <tr>
+            <td>2</td>
+            <td>Leite em pó</td>
+            <td>PC</td>
+            <td>20</td>
+            <td class="text-center">
+              <button title="Editar" class="m-r-5 btn-acoes">
+                <i class="fa fa-pencil font-14"></i>
+              </button>
+              <button title="Excluir" class="m-r-5 btn-acoes">
+                <i class="fa fa-trash font-14"></i>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Arroz Tio João</td>
+            <td>KG</td>
+            <td>3</td>
+            <td class="text-center">
+              <button title="Editar" class="m-r-5 btn-acoes">
+                <i class="fa fa-pencil font-14"></i>
+              </button>
+              <button title="Excluir" class="m-r-5 btn-acoes">
+                <i class="fa fa-trash font-14"></i>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </p-panel>
 
     <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
 
-    <br>
+    <hr>
     <div class="row">
       <div class="form-group col-md-12">
-        <button class="mb-5 float-right" pButton [disabled]="submittingForm || resourceForm.invalid" type="submit"
-          label="Salvar Solicitação" icon="pi pi-check"></button>
+        <button class="mb-5 float-right ui-button-success" pButton [disabled]="submittingForm || resourceForm.invalid"
+          type="submit" label="Salvar Solicitação" icon="pi pi-check"></button>
       </div>
     </div>
 

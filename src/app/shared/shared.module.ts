@@ -7,6 +7,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FormContainerComponent } from './components/form-container/form-container.component';
 
+// PRIME NG
+import {PanelModule} from 'primeng/panel';
+import {TableModule} from 'primeng/table';
+
 @NgModule({
   declarations: [
     BreadCrumbComponent,
@@ -14,7 +18,7 @@ import { FormContainerComponent } from './components/form-container/form-contain
     PanelContainerComponent,
     FormContainerComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, RouterModule ],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, PanelModule, TableModule ],
   exports: [
     // shared Modules
     CommonModule,
@@ -25,8 +29,11 @@ import { FormContainerComponent } from './components/form-container/form-contain
     BreadCrumbComponent,
     FormContainerComponent,
     PanelContainerComponent,
-    ServerErrorMessagesComponent
+    ServerErrorMessagesComponent,
 
+    // prime ng components
+    PanelModule,
+    TableModule
   ]
 })
 export class SharedModule {}

@@ -24,7 +24,7 @@ div.ibox .ibox-head {
   border-bottom: 1px solid $azul-primario;
 
   div.ibox-title {
-    font-size: 27px;
+    font-size: 17px;
     text-transform: uppercase;
     color: $azul-primario;
     @include breakpoint();
@@ -41,6 +41,7 @@ div.ibox .ibox-head {
       border-radius: 5px;
       font-size: 1rem;
       padding: 0 12px;
+      font-size: 13px;
 
       &:hover {
         background: $azul-primario;
