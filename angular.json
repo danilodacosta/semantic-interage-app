@@ -133,7 +133,7 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/tsconfig.spec.json"              
             ],
             "exclude": [
               "**/node_modules/**"
