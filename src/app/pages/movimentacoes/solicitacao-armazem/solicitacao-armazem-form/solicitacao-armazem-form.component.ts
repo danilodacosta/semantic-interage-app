@@ -11,6 +11,8 @@ import { SolicitacaoArmazem } from '../shared/solicitacao-armazem.model';
 })
 export class SolicitacaoArmazemFormComponent extends BaseResourceFormComponent<SolicitacaoArmazem> {
 
+  display = false;
+
   constructor(protected solicitacaoArmazemService: SolicitacaoArmazemService, protected injector: Injector) {
     super(injector, new SolicitacaoArmazem(), solicitacaoArmazemService, SolicitacaoArmazem.fromJson);
   }
@@ -46,6 +48,10 @@ export class SolicitacaoArmazemFormComponent extends BaseResourceFormComponent<S
  protected editionPageTitle(): string {
    const solicitacao: string  = this.resource.numero || '' ;
    return 'Alterando Solicitação : ' + solicitacao;
+ }
+
+ showDialog() {
+     this.display = true;
  }
 
 

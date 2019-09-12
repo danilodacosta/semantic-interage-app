@@ -9,7 +9,7 @@ import { FormContainerComponent } from './components/form-container/form-contain
 
 // PRIME NG
 import {PanelModule} from 'primeng/panel';
-import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {TableModule} from 'primeng/table';
     PanelContainerComponent,
     FormContainerComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, PanelModule, TableModule ],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, PanelModule, DialogModule ],
   exports: [
     // shared Modules
     CommonModule,
@@ -33,7 +33,7 @@ import {TableModule} from 'primeng/table';
 
     // prime ng components
     PanelModule,
-    TableModule
+    DialogModule
   ]
 })
 export class SharedModule {}
