@@ -2,12 +2,12 @@ import { BaseResourceModel } from 'src/app/shared/models/base-resource.model';
 
 export class Produto extends BaseResourceModel {
   constructor(
-    public id?: number,
+    public id?: any,
     public descricao?: string,
-    public unidade?: number,
+    public tipo?: string,
     public contaContabil?: number,
     public almoxarifado?: number,
-    public ultimoPrecoCompra?: number
+    public precoCompra?: number
   ) {
     super();
   }
